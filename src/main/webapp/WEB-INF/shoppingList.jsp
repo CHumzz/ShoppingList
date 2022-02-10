@@ -10,8 +10,7 @@
         <h1>Shopping List!</h1>
         
         <p> Hello, ${username} <a href="">Logout </a> </p>
-        
-        
+
         <h2> List </h2>
         
         <form action="ShoppingList" method="post">
@@ -24,12 +23,16 @@
             
         </form>
        
-        <form> 
+        <form action="ShoppingList" method="post"> 
+            <input type ="hidden" name ="action" value="delete">
+            
             <c:forEach items="${items}" var="item">
+                <!-- Wanted a C out tag instead of {item} stated in video -->
                 <p>
-                    <input type="radio" name="list" value="${item}}">
-                    apples
+                    <input type="radio" name="item" value="${item}}">
+                    ${item}
                 </p>
+                
             </c:forEach>
         
             <br> <button type="submit">Delete</button>

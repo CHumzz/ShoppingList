@@ -36,7 +36,6 @@ public class ShoppingListServlet extends HttpServlet {
         }    
     }
 
-    
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -62,10 +61,17 @@ public class ShoppingListServlet extends HttpServlet {
             
             session.setAttribute("items", items);
             
-        } else {
-            String username = request.getParameter("username");
- 
+        } else if (action!= null && action.equals("delete")) {
+            String item = request.getParameter("item");
             
+            ArrayList<String> items = (ArrayList<String>)session.getAttribute("items");
+            
+            items.remove(item);
+            
+            session.setAttribute("items", items);
+        } else {          
+            
+            String username = request.getParameter("username");
             
             ArrayList<String> items = new ArrayList<>();
         
