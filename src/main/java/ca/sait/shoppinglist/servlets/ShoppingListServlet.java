@@ -50,6 +50,8 @@ public class ShoppingListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
+        
+    
         String action = request.getParameter("action");
         
         if (action != null && action.equals("add")){
@@ -61,18 +63,16 @@ public class ShoppingListServlet extends HttpServlet {
             session.setAttribute("items", items);
             
         } else {
-            
             String username = request.getParameter("username");
  
+            
             
             ArrayList<String> items = new ArrayList<>();
         
             session.setAttribute("username", username);
             session.setAttribute("items", items);
-
-            getServletContext().getRequestDispatcher("/WEB-INF/shoppingList.jsp").forward(request, response);
-            
+        
         }
-
+        getServletContext().getRequestDispatcher("/WEB-INF/shoppingList.jsp").forward(request, response);
     }
 }

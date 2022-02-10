@@ -1,10 +1,5 @@
-<%-- 
-    Document   : shoppingList
-    Created on : 10-Feb-2022, 10:24:49 AM
-    Author     : Cole
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,10 +25,12 @@
         </form>
        
         <form> 
-            <p>
-                <input type="radio" name="list"value="apples">
-                apples
-            </p>
+            <c:forEach items="${items}" var="item">
+                <p>
+                    <input type="radio" name="list" value="${item}}">
+                    apples
+                </p>
+            </c:forEach>
         
             <br> <button type="submit">Delete</button>
         </form>
