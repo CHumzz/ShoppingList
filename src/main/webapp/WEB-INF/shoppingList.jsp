@@ -26,5 +26,13 @@
             
         </form>
        
+        <form> 
+            <input type="radio" name="list" id="one" value="apples">
+            <label for="one"> apples </label><br>
+            <input type="radio" name="list" id="two" value="beachball">
+            <label for="one"> beachball </label>
+        
+            <br> <button type="submit">Delete</button>
+        </form>
     </body>
 </html>
