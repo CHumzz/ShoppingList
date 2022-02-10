@@ -14,23 +14,26 @@
     <body>
         <h1>Shopping List!</h1>
         
-        <p> Hell, adam, <a href="">Logout </a> </p>
+        <p> Hello, ${username} <a href="">Logout </a> </p>
         
         
         <h2> List </h2>
         
-        <form>
+        <form action="ShoppingList" method="post">
+            <input type ="hidden" name ="action" value="add">
+            
             <label for="item">Add Item:</label>
             <input type="text" name ="item" id="item">
+            
             <button type="submit">Add </button>
             
         </form>
        
         <form> 
-            <input type="radio" name="list" id="one" value="apples">
-            <label for="one"> apples </label><br>
-            <input type="radio" name="list" id="two" value="beachball">
-            <label for="one"> beachball </label>
+            <p>
+                <input type="radio" name="list"value="apples">
+                apples
+            </p>
         
             <br> <button type="submit">Delete</button>
         </form>

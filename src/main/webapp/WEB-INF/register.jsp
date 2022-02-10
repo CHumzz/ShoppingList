@@ -8,7 +8,7 @@
     <body>
         <h1>Shopping List</h1>
         
-        <form action= "note" method="post">
+        <form action= "ShoppingList" method="post">
             <label for="username">Username:</label>
             <input type="text" name ="username" id="username">
             <button type="submit">Register name</button>
