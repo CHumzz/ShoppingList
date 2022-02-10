@@ -50,10 +50,9 @@ public class ShoppingListServlet extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         
-    
         String action = request.getParameter("action");
         
-        if (action != null && action.equals("add")){
+        if (action != null && action.equals("add")) {
             String item = request.getParameter("item");
             
             ArrayList<String> items = (ArrayList<String>)session.getAttribute("items");
