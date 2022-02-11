@@ -12,6 +12,7 @@
             <label for="username">Username:</label>
             <input type="text" name ="username" id="username">
             <button type="submit">Register name</button>
+            <p> ${message} </p>
             
         </form>
        

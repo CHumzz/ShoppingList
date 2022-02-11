@@ -28,6 +28,17 @@ public class ShoppingListServlet extends HttpServlet {
         HttpSession session = request.getSession();
         
         String username = (String) session.getAttribute("username");
+       
+        String query = request.getQueryString();
+        if (query != null && query.contains("logout")) {
+            session.invalidate();
+
+            request.setAttribute("message", "You are logged out");
+            getServletContext().getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
+        } else {
+            getServletContext().getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
+            return;
+        }
         
         if (username == null){
             getServletContext().getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
@@ -51,9 +62,7 @@ public class ShoppingListServlet extends HttpServlet {
         HttpSession session = request.getSession();
         
         String action = request.getParameter("action");
-        
-     //need logout button
-        
+         
         if (action != null && action.equals("add")) {
             String item = request.getParameter("item");
             
