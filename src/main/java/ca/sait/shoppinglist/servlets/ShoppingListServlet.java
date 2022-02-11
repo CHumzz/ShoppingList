@@ -52,6 +52,8 @@ public class ShoppingListServlet extends HttpServlet {
         
         String action = request.getParameter("action");
         
+     //need logout button
+        
         if (action != null && action.equals("add")) {
             String item = request.getParameter("item");
             
@@ -77,6 +79,8 @@ public class ShoppingListServlet extends HttpServlet {
             session.setAttribute("items", items);
         
         }
+        
+        
         getServletContext().getRequestDispatcher("/WEB-INF/shoppingList.jsp").forward(request, response);
     }
 }
